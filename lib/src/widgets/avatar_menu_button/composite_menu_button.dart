@@ -18,7 +18,7 @@ class CompositeMenuButton<S extends AstroState> extends StatelessWidget {
   const CompositeMenuButton(
       {required Widget topButton,
       required Set<MenuOption> options,
-      required GlobalKey<PopupMenuButtonState> popupKey,
+      required GlobalKey<PopupMenuButtonState<dynamic>> popupKey,
       Key? key})
       : _topButton = topButton,
         _options = options,
@@ -27,7 +27,7 @@ class CompositeMenuButton<S extends AstroState> extends StatelessWidget {
 
   final Set<MenuOption> _options;
   final Widget _topButton;
-  final GlobalKey<PopupMenuButtonState> _popupKey;
+  final GlobalKey<PopupMenuButtonState<dynamic>> _popupKey;
 
   @override
   Widget build(BuildContext context) {

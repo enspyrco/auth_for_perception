@@ -28,7 +28,8 @@ void initializeAuthPlugin<S extends AstroState>({
 
   /// Start with the AuthGate as the only route in the navigation stack
   Locator.add<S>((locate<S>() as dynamic).copyWith(
-      navigation: const DefaultNavigationState(stack: [AuthGatePageState()])));
+      navigation:
+          const DefaultNavigationState(stack: [AuthGatePageState()])) as S);
 
   locate<PageGenerator>().add(
       type: AuthGatePageState,

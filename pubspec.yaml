@@ -4,33 +4,18 @@ version: 0.0.1
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: '>=3.0.1 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  sign_in_with_apple: ^4.1.0
-  crypto: ^3.0.2
-  astro_locator:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/dart/utils/astro_locator
-  astro:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro
-  astro_navigation:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro_navigation
-  astro_types:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro_types
-  astro_error_handling:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro_error_handling
+  sign_in_with_apple: ^5.0.0
+  crypto: ^3.0.3
+  astro_locator: ^0.0.0-a1
+  astro_core: ^0.0.0-a1
+  astro_navigation: ^0.0.0-a1
+  astro_types: ^0.0.0-a1
+  astro_error_handling: ^0.0.0-a1
   firebase_auth_service_interface:
     git:
       url: https://github.com/enspyrco/monorepo.git
@@ -43,13 +28,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lints: ^2.0.0
-  astro_test_utils:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro_test_utils
-  build_runner: ^2.3.2
-  astro_generators:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/astro_generators
+  enspyr_lints: ^0.0.0-a1
+  astro_test_utils: ^0.0.0-a1
+  build_runner: ^2.4.5
+  astro_generators: ^0.0.0-a1

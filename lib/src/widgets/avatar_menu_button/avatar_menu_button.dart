@@ -1,9 +1,9 @@
-import 'package:astro/astro.dart';
-import 'package:astro_auth/astro_auth.dart';
+import 'package:astro_core/astro_core.dart';
 import 'package:astro_types/auth_types.dart';
 import 'package:astro_types/state_types.dart';
 import 'package:flutter/material.dart';
 
+import '../../../astro_auth.dart';
 import 'composite_menu_button.dart';
 import 'profile_avatar.dart';
 
@@ -20,7 +20,7 @@ class AvatarMenuButton<S extends AstroState> extends StatefulWidget {
 
 class _AvatarMenuButtonState<S extends AstroState>
     extends State<AvatarMenuButton> {
-  final _popupKey = GlobalKey<PopupMenuButtonState>();
+  final _popupKey = GlobalKey<PopupMenuButtonState<dynamic>>();
 
   @override
   Widget build(BuildContext context) {

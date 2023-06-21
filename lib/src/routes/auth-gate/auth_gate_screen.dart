@@ -1,4 +1,4 @@
-import 'package:astro/astro.dart';
+import 'package:astro_core/astro_core.dart';
 import 'package:astro_types/auth_types.dart';
 import 'package:astro_types/state_types.dart';
 import 'package:flutter/material.dart';
@@ -13,17 +13,18 @@ class AuthGateScreen<S extends AstroState> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnStateChangeBuilder<S, SignedInState>(
-      transformer: (state) => (state as dynamic).auth.user.signedIn,
+      transformer: (state) =>
+          (state as dynamic).auth.user.signedIn as SignedInState,
       builder: ((context, signedInState) {
         switch (signedInState) {
           case SignedInState.checking:
-            return ProgressIndicatorWithMessage('Checking...');
+            return const ProgressIndicatorWithMessage('Checking...');
           case SignedInState.notSignedIn:
             return SignInScreen<S>();
           case SignedInState.signedIn:
             return child;
           default:
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
         }
       }),
     );

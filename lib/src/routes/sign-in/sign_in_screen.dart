@@ -1,4 +1,4 @@
-import 'package:astro/astro.dart';
+import 'package:astro_core/astro_core.dart';
 import 'package:astro_locator/astro_locator.dart';
 import 'package:astro_types/auth_types.dart';
 import 'package:astro_types/core_types.dart';
@@ -14,7 +14,8 @@ class SignInScreen<T extends AstroState> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnStateChangeBuilder<T, SignedInState>(
-        transformer: (state) => (state as dynamic).auth.user.signedIn,
+        transformer: (state) =>
+            (state as dynamic).auth.user.signedIn as SignedInState,
         builder: (context, signedInState) {
           if (signedInState == SignedInState.notSignedIn) {
             return plugin.SignInWithAppleButton(
