@@ -13,10 +13,10 @@ dependency_overrides:
     git: https://github.com/enspyrco/astro_types
   astro_error_handling:
     git: https://github.com/enspyrco/astro_error_handling
-  # firebase_auth_service_interface:
-  #   git: ../../../dart/interfaces/firebase_auth_service_interface
-  # firebase_auth_service_flutterfire:
-  #   git: ../../../flutter/utils/flutterfire/firebase_auth_service_flutterfire
+  firebase_auth_service_interface:
+    git: https://github.com/enspyrco/firebase_auth_service_interface
+  firebase_auth_service_flutterfire:
+    git: https://github.com/enspyrco/firebase_auth_service_flutterfire
   enspyr_lints:
     git: https://github.com/enspyrco/enspyr_lints
 

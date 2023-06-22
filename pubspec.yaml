@@ -16,14 +16,8 @@ dependencies:
   astro_navigation: ^0.0.0-a1
   astro_types: ^0.0.0-a1
   astro_error_handling: ^0.0.0-a1
-  firebase_auth_service_interface:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/dart/interfaces/firebase_auth_service_interface
-  firebase_auth_service_flutterfire:
-    git:
-      url: https://github.com/enspyrco/monorepo.git
-      path: packages/flutter/utils/flutterfire/firebase_auth_service_flutterfire
+  firebase_auth_service_interface: ^0.0.0-a1
+  firebase_auth_service_flutterfire: ^0.0.0-a1
 
 dev_dependencies:
   flutter_test:
