@@ -1,6 +1,6 @@
-name: astro_auth
-description: Drop-in astro components for authentication.
-version: 0.0.1
+name: auth_for_perception
+description: Drop-in auth components for perception.
+version: 0.0.0-a1
 publish_to: none
 
 environment:

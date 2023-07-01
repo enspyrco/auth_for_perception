@@ -1,6 +1,6 @@
-# astro_auth
+# auth_for_perception
 
-*Drop-in astro components for authentication.*
+*Drop-in auth components for [perception](https://www.notion.so/enspyrco/perception-ddc456d62c9e4d0aac6c8a38a7f6ad20).*
 
 ## Features
 

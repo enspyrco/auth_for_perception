@@ -1,4 +1,4 @@
-library astro_auth;
+library auth_for_perception;
 
 import 'package:firebase_auth_service_flutterfire/auth_state_flutterfire.dart';
 import 'package:firebase_auth_service_flutterfire/user_auth_state_flutterfire.dart';

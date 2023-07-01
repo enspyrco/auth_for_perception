@@ -3,7 +3,7 @@ import 'package:astro_types/auth_types.dart';
 import 'package:astro_types/state_types.dart';
 import 'package:flutter/material.dart';
 
-import '../../../astro_auth.dart';
+import '../../../auth_for_perception.dart';
 import 'composite_menu_button.dart';
 import 'profile_avatar.dart';
 

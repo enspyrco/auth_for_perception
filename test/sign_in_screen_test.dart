@@ -1,4 +1,4 @@
-import 'package:astro_auth/astro_auth.dart';
+import 'package:auth_for_perception/auth_for_perception.dart';
 import 'package:astro_test_utils/astro_widgets_test_utils.dart';
 import 'package:astro_types/auth_types.dart';
 import 'package:firebase_auth_service_flutterfire/auth_state_flutterfire.dart';
@@ -6,7 +6,7 @@ import 'package:firebase_auth_service_flutterfire/user_auth_state_flutterfire.da
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
-import 'test-doubles/astro_auth_app_state.dart';
+import 'test-doubles/auth_for_perception_app_state.dart';
 
 void main() {
   group('SignInScreen', () {

@@ -6,7 +6,7 @@ import 'package:firebase_auth_service_flutterfire/firebase_auth_service_flutterf
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:flutter/material.dart';
 
-import '../../astro_auth.dart';
+import '../../auth_for_perception.dart';
 
 void initializeAuthPlugin<S extends AstroState>({
   required Widget initialScreen,
