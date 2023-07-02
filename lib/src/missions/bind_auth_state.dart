@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:astro_error_handling/astro_error_handling.dart';
-import 'package:astro_locator/astro_locator.dart';
-import 'package:astro_types/auth_types.dart';
-import 'package:astro_types/core_types.dart';
-import 'package:astro_types/json_types.dart';
-import 'package:astro_types/state_types.dart';
+import 'package:error_handling_for_perception/error_handling_for_perception.dart';
+import 'package:locator_for_perception/locator_for_perception.dart';
+import 'package:types_for_perception/auth_types.dart';
+import 'package:types_for_perception/core_types.dart';
+import 'package:types_for_perception/json_types.dart';
+import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 
 import '../utils/on_auth_state_change.dart';

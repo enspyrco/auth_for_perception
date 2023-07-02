@@ -1,5 +1,5 @@
-import 'package:astro_types/auth_types.dart';
-import 'package:astro_types/state_types.dart';
+import 'package:types_for_perception/auth_types.dart';
+import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_flutterfire/auth_state_flutterfire.dart';
 
 class ExampleAppState implements AstroState, AppStateAuth {

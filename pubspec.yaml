@@ -9,13 +9,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
   sign_in_with_apple: ^5.0.0
   crypto: ^3.0.3
-  astro_locator: ^0.0.0-a1
-  astro_core: ^0.0.0-a1
-  astro_navigation: ^0.0.0-a1
-  astro_types: ^0.0.0-a1
-  astro_error_handling: ^0.0.0-a1
+  
+  core_of_perception: ^0.0.0-a1
+  error_handling_for_perception: ^0.0.0-a1
+  locator_for_perception: ^0.0.0-a1
+  navigation_for_perception: ^0.0.0-a1
+  types_for_perception: ^0.0.0-a1
+  
   firebase_auth_service_interface: ^0.0.0-a1
   firebase_auth_service_flutterfire: ^0.0.0-a1
 
@@ -23,6 +26,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   enspyr_lints: ^0.0.0-a1
-  astro_test_utils: ^0.0.0-a1
   build_runner: ^2.4.5
-  astro_generators: ^0.0.0-a1
+  builders_for_perception: ^0.0.0-a1
+  test_utils_for_perception: ^0.0.0-a1

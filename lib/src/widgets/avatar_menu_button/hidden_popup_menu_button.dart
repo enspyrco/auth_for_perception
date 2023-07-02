@@ -1,4 +1,4 @@
-import 'package:astro_types/state_types.dart';
+import 'package:types_for_perception/state_types.dart';
 import 'package:flutter/material.dart';
 
 import 'menu_option.dart';

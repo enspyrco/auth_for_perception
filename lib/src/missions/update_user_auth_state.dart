@@ -1,6 +1,6 @@
-import 'package:astro_types/auth_types.dart';
-import 'package:astro_types/core_types.dart';
-import 'package:astro_types/state_types.dart';
+import 'package:types_for_perception/auth_types.dart';
+import 'package:types_for_perception/core_types.dart';
+import 'package:types_for_perception/state_types.dart';
 
 class UpdateUserAuthState<T extends AstroState> extends LandingMission<T> {
   const UpdateUserAuthState(this.user);
