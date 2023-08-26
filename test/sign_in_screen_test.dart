@@ -1,10 +1,10 @@
 import 'package:auth_for_perception/auth_for_perception.dart';
-import 'package:test_utils_for_perception/astro_widgets_test_utils.dart';
-import 'package:types_for_perception/auth_types.dart';
+import 'package:test_utils_for_perception/test_utils_for_perception.dart';
 import 'package:firebase_auth_service_flutterfire/auth_state_flutterfire.dart';
 import 'package:firebase_auth_service_flutterfire/user_auth_state_flutterfire.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:types_for_auth/types_for_auth.dart';
 
 import 'test-doubles/auth_for_perception_app_state.dart';
 

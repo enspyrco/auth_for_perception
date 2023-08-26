@@ -1,7 +1,7 @@
+import 'package:types_for_perception/beliefs.dart';
 import 'package:types_for_perception/navigation_types.dart';
-import 'package:types_for_perception/state_types.dart';
 
-class SignInPageState implements PageState, AstroState {
+class SignInPageState implements PageState, CoreBeliefs {
   const SignInPageState();
 
   @override

@@ -1,8 +1,7 @@
-import 'package:types_for_perception/auth_types.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/state_types.dart';
+import 'package:types_for_auth/types_for_auth.dart';
+import 'package:types_for_perception/beliefs.dart';
 
-class UpdateUserAuthState<T extends AstroState> extends LandingMission<T> {
+class UpdateUserAuthState<T extends CoreBeliefs> extends LandingMission<T> {
   const UpdateUserAuthState(this.user);
 
   final UserAuthState user;
@@ -16,6 +15,13 @@ class UpdateUserAuthState<T extends AstroState> extends LandingMission<T> {
   @override
   toJson() => {
         'name_': 'Update User State',
-        'state_': <String, dynamic>{'user': user.toJson()}
+        'state_': <String, dynamic>{
+          'user': <String, dynamic>{
+            'signedIn': user.signedIn,
+            'displayName': user.displayName,
+            'photoURL': user.photoURL,
+            'uid': user.uid,
+          }
+        }
       };
 }

@@ -1,14 +1,13 @@
 import 'package:locator_for_perception/locator_for_perception.dart';
 import 'package:navigation_for_perception/navigation_for_perception.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_flutterfire/firebase_auth_service_flutterfire.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:flutter/material.dart';
+import 'package:types_for_perception/beliefs.dart';
 
 import '../../auth_for_perception.dart';
 
-void initializeAuthPlugin<S extends AstroState>({
+void initializeAuthPlugin<S extends CoreBeliefs>({
   required Widget initialScreen,
   List<AwayMission<S>>? launchOnSignedIn,
   List<LandingMission<S>>? landOnSignedIn,

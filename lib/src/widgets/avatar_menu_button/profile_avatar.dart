@@ -1,9 +1,9 @@
-import 'package:types_for_perception/state_types.dart';
 import 'package:flutter/material.dart';
+import 'package:types_for_perception/beliefs.dart';
 
 import 'checked_circle_avatar.dart';
 
-class ProfileAvatar<S extends AstroState> extends StatelessWidget {
+class ProfileAvatar<S extends CoreBeliefs> extends StatelessWidget {
   final String? photoURL;
   final void Function()? onPressed;
   const ProfileAvatar(this.photoURL, {this.onPressed, Key? key})

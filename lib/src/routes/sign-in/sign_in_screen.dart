@@ -1,14 +1,13 @@
 import 'package:core_of_perception/core_of_perception.dart';
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:types_for_perception/auth_types.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart' as plugin;
+import 'package:types_for_auth/types_for_auth.dart';
+import 'package:types_for_perception/beliefs.dart';
 
 import '../../missions/sign_in_with_apple.dart';
 
-class SignInScreen<T extends AstroState> extends StatelessWidget {
+class SignInScreen<T extends CoreBeliefs> extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override

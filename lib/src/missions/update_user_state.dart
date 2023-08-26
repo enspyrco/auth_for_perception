@@ -1,8 +1,7 @@
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_flutterfire/user_auth_state_flutterfire.dart';
+import 'package:types_for_perception/beliefs.dart';
 
-class UpdateUserState<T extends AstroState> extends LandingMission<T> {
+class UpdateUserState<T extends CoreBeliefs> extends LandingMission<T> {
   const UpdateUserState(this.user);
 
   final UserAuthStateFlutterfire user;

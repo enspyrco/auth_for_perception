@@ -1,7 +1,6 @@
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/state_types.dart';
+import 'package:types_for_perception/beliefs.dart';
 
-class OnAuthStateChange<S extends AstroState> {
+class OnAuthStateChange<S extends CoreBeliefs> {
   OnAuthStateChange({
     List<AwayMission<S>>? launchOnSignedIn,
     List<LandingMission<S>>? landOnSignedIn,

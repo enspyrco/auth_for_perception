@@ -1,10 +1,9 @@
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/json_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
+import 'package:json_utils/json_utils.dart';
+import 'package:types_for_perception/beliefs.dart';
 
-class SignInWithFirebaseWithAppleCredential<T extends AstroState>
+class SignInWithFirebaseWithAppleCredential<T extends CoreBeliefs>
     extends AwayMission<T> {
   const SignInWithFirebaseWithAppleCredential({
     required this.idToken,

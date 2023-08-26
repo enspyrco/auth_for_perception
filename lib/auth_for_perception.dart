@@ -15,7 +15,7 @@ export 'src/widgets/avatar_menu_button/avatar_menu_button.dart';
 export 'src/widgets/avatar_menu_button/menu_option.dart';
 
 /// Factory methods for creating AuthState objects
-class AstroAuth {
-  static AuthStateFlutterfire initialState() =>
-      AuthStateFlutterfire(user: UserAuthStateFlutterfire());
+class AuthBeliefSystem {
+  static AuthStateFlutterfire initialBeliefs() =>
+      const AuthStateFlutterfire(user: UserAuthStateFlutterfire());
 }

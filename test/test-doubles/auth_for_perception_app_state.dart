@@ -1,12 +1,12 @@
-import 'package:types_for_perception/auth_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_flutterfire/auth_state_flutterfire.dart';
+import 'package:types_for_perception/auth_beliefs.dart';
+import 'package:types_for_perception/beliefs.dart';
 
-class AstroAuthAppState implements AstroState, AppStateAuth {
+class AstroAuthAppState implements CoreBeliefs, AuthConcept {
   AstroAuthAppState({required this.auth});
 
   static AstroAuthAppState get initial =>
-      AstroAuthAppState(auth: AuthStateFlutterfire());
+      AstroAuthAppState(auth: const AuthStateFlutterfire());
 
   @override
   final AuthStateFlutterfire auth;

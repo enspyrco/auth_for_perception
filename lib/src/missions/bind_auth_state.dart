@@ -1,19 +1,18 @@
 import 'dart:async';
 
 import 'package:error_handling_for_perception/error_handling_for_perception.dart';
+import 'package:json_utils/json_utils.dart';
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:types_for_perception/auth_types.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/json_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
+import 'package:types_for_auth/types_for_auth.dart';
+import 'package:types_for_perception/beliefs.dart';
 
 import '../utils/on_auth_state_change.dart';
 import 'update_user_auth_state.dart';
 
 StreamSubscription<UserAuthState>? _subscription;
 
-class BindAuthState<T extends AstroState> extends AwayMission<T> {
+class BindAuthState<T extends CoreBeliefs> extends AwayMission<T> {
   const BindAuthState();
 
   @override
@@ -23,7 +22,7 @@ class BindAuthState<T extends AstroState> extends AwayMission<T> {
     _subscription?.cancel();
 
     _subscription = service.onAuthStateChange.listen(
-      (user) {
+      (UserAuthState user) {
         missionControl.land(UpdateUserAuthState<T>(user));
 
         /// Start any missions that were added to [OnAuthStateChangeMissions].

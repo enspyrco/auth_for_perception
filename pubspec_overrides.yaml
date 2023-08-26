@@ -1,41 +1,27 @@
 dependency_overrides:
-  locator_for_perception:
-    git: https://github.com/enspyrco/locator_for_perception
-  core_of_perception:
-    git: https://github.com/enspyrco/core_of_perception
-  builders_for_perception:
-    git: https://github.com/enspyrco/builders_for_perception
-  navigation_for_perception:
-    git: https://github.com/enspyrco/navigation_for_perception
-  test_utils_for_perception:
-    git: https://github.com/enspyrco/test_utils_for_perception
-  types_for_perception:
-    git: https://github.com/enspyrco/types_for_perception
-  error_handling_for_perception:
-    git: https://github.com/enspyrco/error_handling_for_perception
-  firebase_auth_service_interface:
-    git: https://github.com/enspyrco/firebase_auth_service_interface
-  firebase_auth_service_flutterfire:
-    git: https://github.com/enspyrco/firebase_auth_service_flutterfire
-  enspyr_lints:
-    git: https://github.com/enspyrco/enspyr_lints
+# where are we? flutter/utils/perception/auth/<here>
+  # locator_for_perception:
+  #   path: ../../locator_for_perception
+  # core_of_perception:
+  #   path: ../../core_of_perception
+  # builders_for_perception:
+  #   path: ../../builders_for_perception
+  # navigation_for_perception:
+  #   path: ../../navigation_for_perception
+  # test_utils_for_perception:
+  #   path: ../../test_utils_for_perception
+  # types_for_perception:
+  #   path: ../../types_for_perception
+  # error_handling_for_perception:
+  #   path: ../../error_handling_for_perception
+  # firebase_auth_service_interface:
+  #   path: ../../../../../dart/interfaces/firebase_auth_service_interface
+  # firebase_auth_service_flutterfire:
+  #   path: ../../../flutterfire/firebase_auth_service_flutterfire
 
-# dependency_overrides:
-#   locator_for_perception:
-#     path: ../../../dart/utils/locator_for_perception
-#   astro:
-#     path: ../../../flutter/utils/astro
-#   builders_for_perception:
-#     path: ../../../flutter/utils/builders_for_perception
-#   navigation_for_perception:
-#     path: ../../../flutter/utils/navigation_for_perception
-#   test_utils_for_perception:
-#     path: ../../../flutter/utils/test_utils_for_perception
-#   types_for_perception:
-#     path: ../../../flutter/utils/types_for_perception
-#   error_handling_for_perception:
-#     path: ../error_handling_for_perception
-#   firebase_auth_service_interface:
-#     path: ../../../dart/interfaces/firebase_auth_service_interface
-#   firebase_auth_service_flutterfire:
-#     path: ../../../flutter/utils/flutterfire/firebase_auth_service_flutterfire
+  # enspyr_lints:
+  #   path: 
+  # types_for_auth:
+  #   path: 
+  # json_utils:
+  #   path: 

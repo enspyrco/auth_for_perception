@@ -1,5 +1,5 @@
-import 'package:types_for_perception/state_types.dart';
 import 'package:flutter/material.dart';
+import 'package:types_for_perception/beliefs.dart';
 
 import 'hidden_popup_menu_button.dart';
 import 'menu_option.dart';
@@ -14,7 +14,7 @@ import 'menu_option.dart';
 /// A global key is given to [HiddenPopupMenuButton] to be used as the
 /// [PopupMenuButton]'s key. The key is also used by the [topButton] to pop the
 /// menu.
-class CompositeMenuButton<S extends AstroState> extends StatelessWidget {
+class CompositeMenuButton<S extends CoreBeliefs> extends StatelessWidget {
   const CompositeMenuButton(
       {required Widget topButton,
       required Set<MenuOption> options,

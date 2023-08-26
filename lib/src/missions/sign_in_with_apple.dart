@@ -1,12 +1,11 @@
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/json_types.dart';
-import 'package:types_for_perception/state_types.dart';
+import 'package:json_utils/json_utils.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart' as plugin;
+import 'package:types_for_perception/beliefs.dart';
 
 import '../utils/nonce.dart';
 import 'sign_in_with_firebase_with_apple_credential.dart';
 
-class SignInWithApple<T extends AstroState> extends AwayMission<T> {
+class SignInWithApple<T extends CoreBeliefs> extends AwayMission<T> {
   SignInWithApple();
 
   /// From: `somewhere I can't remember now...`
