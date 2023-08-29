@@ -1,4 +1,4 @@
-name: auth_for_perception
+name: identity_in_perception
 description: Drop-in auth components for perception.
 version: 0.0.0-a1
 publish_to: none
@@ -13,14 +13,14 @@ dependencies:
   sign_in_with_apple: ^5.0.0
   crypto: ^3.0.3
   
-  core_of_perception:
-    git: https://github.com/enspyrco/core_of_perception
-  navigation_for_perception:
-    git: https://github.com/enspyrco/navigation_for_perception
-  types_for_perception:
-    git: https://github.com/enspyrco/types_for_perception
-  error_handling_for_perception:
-    git: https://github.com/enspyrco/error_handling_for_perception
+  percepts:
+    git: https://github.com/enspyrco/percepts
+  framing_in_perception:
+    git: https://github.com/enspyrco/framing_in_perception
+  abstractions:
+    git: https://github.com/enspyrco/abstractions
+  error_correction_in_perception:
+    git: https://github.com/enspyrco/error_correction_in_perception
   locator_for_perception:
     git: https://github.com/enspyrco/locator_for_perception
   
@@ -32,8 +32,8 @@ dependencies:
   # auth
   firebase_auth_service_interface:
     git: https://github.com/enspyrco/firebase_auth_service_interface
-  firebase_auth_service_flutterfire:
-    git: https://github.com/enspyrco/firebase_auth_service_flutterfire
+  flutterfire_firebase_auth_service:
+    git: https://github.com/enspyrco/flutterfire_firebase_auth_service
 
 dev_dependencies:
   flutter_test:

@@ -1,29 +1,29 @@
 import 'dart:async';
 
-import 'package:error_handling_for_perception/error_handling_for_perception.dart';
+import 'package:error_correction_in_perception/error_correction_in_perception.dart';
 import 'package:json_utils/json_utils.dart';
 import 'package:locator_for_perception/locator_for_perception.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:types_for_auth/types_for_auth.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
-import '../utils/on_auth_state_change.dart';
+import '../../utils/on_auth_state_change.dart';
 import 'update_user_auth_state.dart';
 
 StreamSubscription<UserAuthState>? _subscription;
 
-class BindAuthState<T extends CoreBeliefs> extends AwayMission<T> {
+class BindAuthState<T extends CoreBeliefs> extends Consideration<T> {
   const BindAuthState();
 
   @override
-  Future<void> flightPlan(MissionControl<T> missionControl) async {
+  Future<void> process(BeliefSystem<T> beliefSystem) async {
     var service = locate<FirebaseAuthService>();
 
     _subscription?.cancel();
 
     _subscription = service.onAuthStateChange.listen(
       (UserAuthState user) {
-        missionControl.land(UpdateUserAuthState<T>(user));
+        beliefSystem.conclude(UpdateUserAuthState<T>(user));
 
         /// Start any missions that were added to [OnAuthStateChangeMissions].
         ///
@@ -32,21 +32,21 @@ class BindAuthState<T extends CoreBeliefs> extends AwayMission<T> {
         final authStateChangeMissions = locate<OnAuthStateChange<T>>();
         if (user.signedIn == SignedInState.signedIn) {
           for (var mission in authStateChangeMissions.launchOnSignedIn) {
-            missionControl.launch(mission);
+            beliefSystem.consider(mission);
           }
           for (var mission in authStateChangeMissions.landOnSignedIn) {
-            missionControl.land(mission);
+            beliefSystem.conclude(mission);
           }
         } else if (user.signedIn == SignedInState.notSignedIn) {
           for (var mission in authStateChangeMissions.launchOnSignedOut) {
-            missionControl.launch(mission);
+            beliefSystem.consider(mission);
           }
           for (var mission in authStateChangeMissions.landOnSignedOut) {
-            missionControl.land(mission);
+            beliefSystem.conclude(mission);
           }
         }
       },
-      onError: (Object error, StackTrace trace) => missionControl.land(
+      onError: (Object error, StackTrace trace) => beliefSystem.conclude(
         CreateErrorReport(error, trace),
       ),
     );

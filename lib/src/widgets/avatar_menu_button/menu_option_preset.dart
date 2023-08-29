@@ -19,6 +19,6 @@
 //   @override
 //   dynamic startMission<S extends AstroState>(BuildContext context) =>
 //       mission is AwayMission
-//           ? locate<MissionControl<S>>().launch(mission as AwayMission<S>)
-//           : locate<MissionControl<S>>().land(mission as LandingMission<S>);
+//           ? locate<BeliefSystem<S>>().launch(mission as AwayMission<S>)
+//           : locate<BeliefSystem<S>>().land(mission as LandingMission<S>);
 // }

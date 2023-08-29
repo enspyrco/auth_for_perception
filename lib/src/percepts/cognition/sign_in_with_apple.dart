@@ -1,11 +1,11 @@
 import 'package:json_utils/json_utils.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart' as plugin;
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
-import '../utils/nonce.dart';
+import '../../utils/nonce.dart';
 import 'sign_in_with_firebase_with_apple_credential.dart';
 
-class SignInWithApple<T extends CoreBeliefs> extends AwayMission<T> {
+class SignInWithApple<T extends CoreBeliefs> extends Consideration<T> {
   SignInWithApple();
 
   /// From: `somewhere I can't remember now...`
@@ -21,7 +21,7 @@ class SignInWithApple<T extends CoreBeliefs> extends AwayMission<T> {
 
   // final nonce = sha256ofString(rawNonce);
   @override
-  Future<void> flightPlan(MissionControl<T> missionControl) async {
+  Future<void> process(BeliefSystem<T> beliefSystem) async {
     final plugin.AuthorizationCredentialAppleID credential =
         await plugin.SignInWithApple.getAppleIDCredential(
       scopes: [
@@ -33,7 +33,7 @@ class SignInWithApple<T extends CoreBeliefs> extends AwayMission<T> {
     var token = credential.identityToken ??
         (throw 'The credential.identityToken variable was null');
 
-    missionControl.launch(SignInWithFirebaseWithAppleCredential<T>(
+    beliefSystem.consider(SignInWithFirebaseWithAppleCredential<T>(
         idToken: token, rawNonce: generateNonce()));
   }
 

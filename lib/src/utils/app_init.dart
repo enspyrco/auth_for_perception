@@ -1,18 +1,18 @@
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:navigation_for_perception/navigation_for_perception.dart';
-import 'package:firebase_auth_service_flutterfire/firebase_auth_service_flutterfire.dart';
+import 'package:framing_in_perception/framing_in_perception.dart';
+import 'package:flutterfire_firebase_auth_service/flutterfire_firebase_auth_service.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:flutter/material.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
-import '../../auth_for_perception.dart';
+import '../../identity_in_perception.dart';
 
 void initializeAuthPlugin<S extends CoreBeliefs>({
   required Widget initialScreen,
-  List<AwayMission<S>>? launchOnSignedIn,
-  List<LandingMission<S>>? landOnSignedIn,
-  List<AwayMission<S>>? launchOnSignedOut,
-  List<LandingMission<S>>? landOnSignedOut,
+  List<Consideration<S>>? launchOnSignedIn,
+  List<Conclusion<S>>? landOnSignedIn,
+  List<Consideration<S>>? launchOnSignedOut,
+  List<Conclusion<S>>? landOnSignedOut,
 }) {
   /// Add the [OnAuthStateChange] object to the locator, which will be used
   /// to kick off missions at given auth state change events.
@@ -27,8 +27,8 @@ void initializeAuthPlugin<S extends CoreBeliefs>({
 
   /// Start with the AuthGate as the only route in the navigation stack
   Locator.add<S>((locate<S>() as dynamic).copyWith(
-      navigation:
-          const DefaultNavigationState(stack: [AuthGatePageState()])) as S);
+          framing: const DefaultFramingBeliefs(layers: [AuthGatePageState()]))
+      as S);
 
   locate<PageGenerator>().add(
       type: AuthGatePageState,
@@ -36,5 +36,5 @@ void initializeAuthPlugin<S extends CoreBeliefs>({
           MaterialPage(child: AuthGateScreen<S>(child: initialScreen)));
 
   /// Create and add a FirebaseAuthService to the Locator
-  Locator.add<FirebaseAuthService>(FirebaseAuthServiceFlutterfire());
+  Locator.add<FirebaseAuthService>(FlutterfireFirebaseAuthService());
 }

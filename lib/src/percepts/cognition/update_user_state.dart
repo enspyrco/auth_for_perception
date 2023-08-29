@@ -1,13 +1,13 @@
-import 'package:firebase_auth_service_flutterfire/user_auth_state_flutterfire.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:flutterfire_firebase_auth_service/flutterfire_user_auth_belief.dart';
+import 'package:abstractions/beliefs.dart';
 
-class UpdateUserState<T extends CoreBeliefs> extends LandingMission<T> {
+class UpdateUserState<T extends CoreBeliefs> extends Conclusion<T> {
   const UpdateUserState(this.user);
 
-  final UserAuthStateFlutterfire user;
+  final FlutterfireUserAuthBelief user;
 
   @override
-  T landingInstructions(T state) {
+  T update(T state) {
     return (state as dynamic)
         .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
   }

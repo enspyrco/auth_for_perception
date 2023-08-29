@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
 import 'menu_option.dart';
 

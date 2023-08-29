@@ -1,9 +1,9 @@
-import 'package:core_of_perception/core_of_perception.dart';
+import 'package:percepts/percepts.dart';
 import 'package:flutter/material.dart';
-import 'package:types_for_perception/auth_beliefs.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/identity.dart';
+import 'package:abstractions/beliefs.dart';
 
-import '../../../auth_for_perception.dart';
+import '../../../identity_in_perception.dart';
 import 'composite_menu_button.dart';
 import 'profile_avatar.dart';
 
@@ -24,9 +24,9 @@ class _AvatarMenuButtonState<S extends CoreBeliefs>
 
   @override
   Widget build(BuildContext context) {
-    return OnStateChangeBuilder<S, String?>(
-      transformer: (state) =>
-          ((state as dynamic).auth as AuthBeliefs).user.photoURL,
+    return StreamOfConsciousness<S, String?>(
+      infer: (state) =>
+          ((state as dynamic).auth as IdentityBeliefs).user.photoURL,
       builder: (context, photoURL) {
         return CompositeMenuButton<S>(
             options: widget._options,

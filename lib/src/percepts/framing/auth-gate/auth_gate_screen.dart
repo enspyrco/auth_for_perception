@@ -1,7 +1,7 @@
-import 'package:core_of_perception/core_of_perception.dart';
+import 'package:percepts/percepts.dart';
 import 'package:flutter/material.dart';
 import 'package:types_for_auth/types_for_auth.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
 import '../sign-in/sign_in_screen.dart';
 
@@ -12,9 +12,8 @@ class AuthGateScreen<S extends CoreBeliefs> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnStateChangeBuilder<S, SignedInState>(
-      transformer: (state) =>
-          (state as dynamic).auth.user.signedIn as SignedInState,
+    return StreamOfConsciousness<S, SignedInState>(
+      infer: (state) => (state as dynamic).auth.user.signedIn as SignedInState,
       builder: ((context, signedInState) {
         switch (signedInState) {
           case SignedInState.checking:

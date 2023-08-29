@@ -1,13 +1,13 @@
 import 'package:types_for_auth/types_for_auth.dart';
-import 'package:types_for_perception/beliefs.dart';
+import 'package:abstractions/beliefs.dart';
 
-class UpdateUserAuthState<T extends CoreBeliefs> extends LandingMission<T> {
+class UpdateUserAuthState<T extends CoreBeliefs> extends Conclusion<T> {
   const UpdateUserAuthState(this.user);
 
   final UserAuthState user;
 
   @override
-  T landingInstructions(T state) {
+  T update(T state) {
     return (state as dynamic)
         .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
   }
