@@ -16,7 +16,7 @@ class BindAuthState<T extends CoreBeliefs> extends Consideration<T> {
   const BindAuthState();
 
   @override
-  Future<void> process(BeliefSystem<T> beliefSystem) async {
+  Future<void> consider(BeliefSystem<T> beliefSystem) async {
     var service = locate<FirebaseAuthService>();
 
     _subscription?.cancel();

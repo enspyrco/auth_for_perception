@@ -14,7 +14,7 @@ class SignInWithFirebaseWithAppleCredential<T extends CoreBeliefs>
   final String rawNonce;
 
   @override
-  Future<void> process(BeliefSystem<T> beliefSystem) async {
+  Future<void> consider(BeliefSystem<T> beliefSystem) async {
     final service = locate<FirebaseAuthService>();
 
     /// We just sign in here, adding the user data to the app state happens where

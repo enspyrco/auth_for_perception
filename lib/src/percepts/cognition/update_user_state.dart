@@ -7,7 +7,7 @@ class UpdateUserState<T extends CoreBeliefs> extends Conclusion<T> {
   final FlutterfireUserAuthBelief user;
 
   @override
-  T update(T state) {
+  T conclude(T state) {
     return (state as dynamic)
         .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
   }

@@ -7,7 +7,7 @@ class SignOut<T extends CoreBeliefs> extends Consideration<T> {
   const SignOut();
 
   @override
-  Future<void> process(BeliefSystem<T> beliefSystem) async {
+  Future<void> consider(BeliefSystem<T> beliefSystem) async {
     var service = locate<FirebaseAuthService>();
     await service.signOut();
   }

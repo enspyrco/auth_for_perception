@@ -7,7 +7,7 @@ class UpdateUserAuthState<T extends CoreBeliefs> extends Conclusion<T> {
   final UserAuthState user;
 
   @override
-  T update(T state) {
+  T conclude(T state) {
     return (state as dynamic)
         .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
   }
