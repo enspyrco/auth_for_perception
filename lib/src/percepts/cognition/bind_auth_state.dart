@@ -47,7 +47,7 @@ class BindAuthState<T extends CoreBeliefs> extends Consideration<T> {
         }
       },
       onError: (Object error, StackTrace trace) => beliefSystem.conclude(
-        CreateErrorReport(error, trace),
+        CreateFeedback(error, trace),
       ),
     );
   }

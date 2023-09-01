@@ -20,7 +20,7 @@ void main() {
 
       // Setup a harness with the initial state.
       final harness = WidgetTestHarness<AstroAuthAppState>(
-        initialState: state,
+        initialBeliefs: state,
         innerWidget: const SignInScreen<AstroAuthAppState>(),
       );
 
