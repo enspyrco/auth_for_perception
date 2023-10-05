@@ -1,20 +1,22 @@
-import 'package:flutterfire_firebase_auth_service/flutterfire_user_auth_belief.dart';
 import 'package:abstractions/beliefs.dart';
+import 'package:percepts/percepts.dart';
 
 class UpdateUserState<T extends CoreBeliefs> extends Conclusion<T> {
-  const UpdateUserState(this.user);
+  const UpdateUserState(this.userAuthState);
 
-  final FlutterfireUserAuthBelief user;
+  final DefaultUserAuthState userAuthState;
 
   @override
-  T conclude(T state) {
-    return (state as dynamic)
-        .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
+  T conclude(T beliefs) {
+    return (beliefs as dynamic).copyWith(
+        auth: (beliefs as dynamic)
+            .identity
+            .copyWith(userAuthState: userAuthState)) as T;
   }
 
   @override
   toJson() => {
         'name_': 'Update User State',
-        'state_': <String, dynamic>{'user': user.toJson()}
+        'state_': <String, dynamic>{'user': userAuthState.toJson()}
       };
 }

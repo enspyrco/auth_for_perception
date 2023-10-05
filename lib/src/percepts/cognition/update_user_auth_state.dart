@@ -2,14 +2,16 @@ import 'package:types_for_auth/types_for_auth.dart';
 import 'package:abstractions/beliefs.dart';
 
 class UpdateUserAuthState<T extends CoreBeliefs> extends Conclusion<T> {
-  const UpdateUserAuthState(this.user);
+  const UpdateUserAuthState(this.userAuthState);
 
-  final UserAuthState user;
+  final UserAuthState userAuthState;
 
   @override
-  T conclude(T state) {
-    return (state as dynamic)
-        .copyWith(auth: (state as dynamic).auth.copyWith(user: user)) as T;
+  T conclude(T beliefs) {
+    return (beliefs as dynamic).copyWith(
+        identity: (beliefs as dynamic)
+            .identity
+            .copyWith(userAuthState: userAuthState)) as T;
   }
 
   @override
@@ -17,10 +19,10 @@ class UpdateUserAuthState<T extends CoreBeliefs> extends Conclusion<T> {
         'name_': 'Update User State',
         'state_': <String, dynamic>{
           'user': <String, dynamic>{
-            'signedIn': user.signedIn,
-            'displayName': user.displayName,
-            'photoURL': user.photoURL,
-            'uid': user.uid,
+            'signedIn': userAuthState.signedIn,
+            'displayName': userAuthState.displayName,
+            'photoURL': userAuthState.photoURL,
+            'uid': userAuthState.uid,
           }
         }
       };

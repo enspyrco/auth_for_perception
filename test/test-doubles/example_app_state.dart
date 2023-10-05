@@ -1,28 +1,28 @@
-import 'package:flutterfire_firebase_auth_service/flutterfire_identity_beliefs.dart';
 import 'package:abstractions/identity.dart';
 import 'package:abstractions/beliefs.dart';
+import 'package:percepts/percepts.dart';
 
 class ExampleAppState implements CoreBeliefs, IdentityConcept {
-  ExampleAppState({required this.auth});
+  ExampleAppState({required this.identity});
 
   static ExampleAppState get initial =>
-      ExampleAppState(auth: const FlutterfireIdentityBeliefs());
+      ExampleAppState(identity: DefaultIdentityBeliefs.initial);
 
   @override
-  final FlutterfireIdentityBeliefs auth;
+  final DefaultIdentityBeliefs identity;
 
   @override
-  ExampleAppState copyWith({FlutterfireIdentityBeliefs? auth}) {
-    return ExampleAppState(auth: auth ?? this.auth);
+  ExampleAppState copyWith({DefaultIdentityBeliefs? identity}) {
+    return ExampleAppState(identity: identity ?? this.identity);
   }
 
   @override
-  toJson() => {'auth': auth.toJson()};
+  toJson() => {'identity': identity.toJson()};
 
   @override
   bool operator ==(Object other) =>
-      other is ExampleAppState && other.auth == auth;
+      other is ExampleAppState && other.identity == identity;
 
   @override
-  int get hashCode => auth.hashCode;
+  int get hashCode => identity.hashCode;
 }

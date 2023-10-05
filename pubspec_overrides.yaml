@@ -4,8 +4,8 @@ dependency_overrides:
     path: ../../locator_for_perception
   percepts:
     path: ../../percepts
-  builders_for_perception:
-    path: ../../builders_for_perception
+  # builders_for_perception:
+  #   path: ../../builders_for_perception
   framing_in_perception:
     path: ../../framing_in_perception
   test_utils_for_perception:
@@ -16,8 +16,6 @@ dependency_overrides:
     path: ../../error_correction_in_perception
   firebase_auth_service_interface:
     path: ../../../../../dart/interfaces/firebase_auth_service_interface
-  flutterfire_firebase_auth_service:
-    path: ../../../flutterfire/flutterfire_firebase_auth_service
 
   # enspyr_lints:
   #   path: 

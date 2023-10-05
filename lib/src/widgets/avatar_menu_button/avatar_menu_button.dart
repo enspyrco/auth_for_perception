@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:abstractions/identity.dart';
 import 'package:abstractions/beliefs.dart';
 
-import '../../../identity_in_perception.dart';
+import '../../../flutterfire_firebase_auth_for_perception.dart';
 import 'composite_menu_button.dart';
 import 'profile_avatar.dart';
 
@@ -25,8 +25,9 @@ class _AvatarMenuButtonState<S extends CoreBeliefs>
   @override
   Widget build(BuildContext context) {
     return StreamOfConsciousness<S, String?>(
-      infer: (state) =>
-          ((state as dynamic).auth as IdentityBeliefs).user.photoURL,
+      infer: (state) => ((state as dynamic).identity as IdentityBeliefs)
+          .userAuthState
+          .photoURL,
       builder: (context, photoURL) {
         return CompositeMenuButton<S>(
             options: widget._options,

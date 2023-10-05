@@ -1,11 +1,11 @@
 import 'package:locator_for_perception/locator_for_perception.dart';
 import 'package:framing_in_perception/framing_in_perception.dart';
-import 'package:flutterfire_firebase_auth_service/flutterfire_firebase_auth_service.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:abstractions/beliefs.dart';
 
-import '../../identity_in_perception.dart';
+import '../../flutterfire_firebase_auth_for_perception.dart';
+import '../services/flutterfire_firebase_auth_service.dart';
 
 void initializeAuthPlugin<S extends CoreBeliefs>({
   required Widget initialScreen,

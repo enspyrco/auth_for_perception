@@ -13,7 +13,8 @@ class AuthGateScreen<S extends CoreBeliefs> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamOfConsciousness<S, SignedInState>(
-      infer: (state) => (state as dynamic).auth.user.signedIn as SignedInState,
+      infer: (state) =>
+          (state as dynamic).identity.userAuthState.signedIn as SignedInState,
       builder: ((context, signedInState) {
         switch (signedInState) {
           case SignedInState.checking:

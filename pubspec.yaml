@@ -1,5 +1,5 @@
-name: identity_in_perception
-description: Drop-in auth components for perception.
+name: flutterfire_firebase_auth_for_perception
+description: An Aspect of perception, part of the Identity core aspect, using FlutterFire's Firebase Auth.
 version: 0.0.0-a1
 publish_to: none
 
@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   
+  firebase_auth: ^4.10.1
   sign_in_with_apple: ^5.0.0
   crypto: ^3.0.3
   
@@ -28,12 +29,8 @@ dependencies:
     git: https://github.com/enspyrco/types_for_auth
   json_utils:
     git: https://github.com/enspyrco/json_utils
-  
-  # auth
   firebase_auth_service_interface:
     git: https://github.com/enspyrco/firebase_auth_service_interface
-  flutterfire_firebase_auth_service:
-    git: https://github.com/enspyrco/flutterfire_firebase_auth_service
 
 dev_dependencies:
   flutter_test:

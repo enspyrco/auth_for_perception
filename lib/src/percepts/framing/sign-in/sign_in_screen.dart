@@ -14,7 +14,7 @@ class SignInScreen<T extends CoreBeliefs> extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamOfConsciousness<T, SignedInState>(
         infer: (state) =>
-            (state as dynamic).auth.user.signedIn as SignedInState,
+            (state as dynamic).identity.userAuthState.signedIn as SignedInState,
         builder: (context, signedInState) {
           if (signedInState == SignedInState.notSignedIn) {
             return plugin.SignInWithAppleButton(
