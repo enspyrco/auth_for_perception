@@ -7,7 +7,7 @@ import 'package:abstractions/beliefs.dart';
 import '../../flutterfire_firebase_auth_for_perception.dart';
 import '../services/flutterfire_firebase_auth_service.dart';
 
-void initializeAuthPlugin<S extends CoreBeliefs>({
+void initializeFlutterfireFirebaseAuth<S extends CoreBeliefs>({
   required Widget initialScreen,
   List<Consideration<S>>? launchOnSignedIn,
   List<Conclusion<S>>? landOnSignedIn,
@@ -18,10 +18,10 @@ void initializeAuthPlugin<S extends CoreBeliefs>({
   /// to kick off missions at given auth state change events.
   Locator.add<OnAuthStateChange<S>>(
     OnAuthStateChange<S>(
-      launchOnSignedIn: launchOnSignedIn,
-      landOnSignedIn: landOnSignedIn,
-      launchOnSignedOut: launchOnSignedOut,
-      landOnSignedOut: landOnSignedOut,
+      considerOnSignedIn: launchOnSignedIn,
+      concludeOnSignedIn: landOnSignedIn,
+      considerOnSignedOut: launchOnSignedOut,
+      concludeOnSignedOut: landOnSignedOut,
     ),
   );
 
