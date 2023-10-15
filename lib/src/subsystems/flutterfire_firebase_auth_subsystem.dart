@@ -6,9 +6,10 @@ import 'package:types_for_auth/types_for_auth.dart';
 
 import '../utils/user_extension.dart';
 
-/// A Firebase Auth service, implementing firebase_auth_service_interface by wrapping Flutterfire's firebase_auth plugin.
-class FlutterfireFirebaseAuthService implements FirebaseAuthService {
-  FlutterfireFirebaseAuthService({FirebaseAuth? plugin})
+/// A perception subsystem that implements the firebase_auth_service_interface
+/// by wrapping Flutterfire's firebase_auth plugin.
+class FlutterfireFirebaseAuthSubsystem implements FirebaseAuthService {
+  FlutterfireFirebaseAuthSubsystem({FirebaseAuth? plugin})
       : _plugin = plugin ?? FirebaseAuth.instance;
 
   final FirebaseAuth _plugin;

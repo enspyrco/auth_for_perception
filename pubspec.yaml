@@ -11,8 +11,6 @@ dependencies:
     sdk: flutter
   
   firebase_auth: ^4.10.1
-  sign_in_with_apple: ^5.0.0
-  crypto: ^3.0.3
   
   percepts:
     git: https://github.com/enspyrco/percepts
