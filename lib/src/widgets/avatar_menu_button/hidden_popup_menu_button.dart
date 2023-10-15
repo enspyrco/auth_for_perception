@@ -1,9 +1,9 @@
-import 'package:types_for_perception/state_types.dart';
 import 'package:flutter/material.dart';
+import 'package:abstractions/beliefs.dart';
 
 import 'menu_option.dart';
 
-class HiddenPopupMenuButton<S extends AstroState> extends StatelessWidget {
+class HiddenPopupMenuButton<S extends CoreBeliefs> extends StatelessWidget {
   const HiddenPopupMenuButton(this._key, Set<MenuOption> options, {Key? key})
       : _options = options,
         super(key: key);

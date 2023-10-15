@@ -1,14 +1,13 @@
+import 'package:json_utils/json_utils.dart';
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/json_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
+import 'package:abstractions/beliefs.dart';
 
-class SignOut<T extends AstroState> extends AwayMission<T> {
+class SignOut<T extends CoreBeliefs> extends Consideration<T> {
   const SignOut();
 
   @override
-  Future<void> flightPlan(MissionControl<T> missionControl) async {
+  Future<void> consider(BeliefSystem<T> beliefSystem) async {
     var service = locate<FirebaseAuthService>();
     await service.signOut();
   }

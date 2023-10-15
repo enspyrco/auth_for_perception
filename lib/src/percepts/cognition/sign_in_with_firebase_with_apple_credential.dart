@@ -1,11 +1,10 @@
 import 'package:locator_for_perception/locator_for_perception.dart';
-import 'package:types_for_perception/core_types.dart';
-import 'package:types_for_perception/json_types.dart';
-import 'package:types_for_perception/state_types.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
+import 'package:json_utils/json_utils.dart';
+import 'package:abstractions/beliefs.dart';
 
-class SignInWithFirebaseWithAppleCredential<T extends AstroState>
-    extends AwayMission<T> {
+class SignInWithFirebaseWithAppleCredential<T extends CoreBeliefs>
+    extends Consideration<T> {
   const SignInWithFirebaseWithAppleCredential({
     required this.idToken,
     required this.rawNonce,
@@ -15,7 +14,7 @@ class SignInWithFirebaseWithAppleCredential<T extends AstroState>
   final String rawNonce;
 
   @override
-  Future<void> flightPlan(MissionControl<T> missionControl) async {
+  Future<void> consider(BeliefSystem<T> beliefSystem) async {
     final service = locate<FirebaseAuthService>();
 
     /// We just sign in here, adding the user data to the app state happens where

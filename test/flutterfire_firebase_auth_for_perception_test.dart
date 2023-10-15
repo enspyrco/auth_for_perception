@@ -1,5 +1,5 @@
-import 'package:types_for_perception/auth_types.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:types_for_auth/types_for_auth.dart';
 
 void main() {
   group('A group of tests', () {

@@ -1,4 +1,4 @@
-# auth_for_perception
+# identity_in_perception
 
 *Drop-in auth components for [perception](https://www.notion.so/enspyrco/perception-ddc456d62c9e4d0aac6c8a38a7f6ad20).*
 
