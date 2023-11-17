@@ -6,8 +6,7 @@ import 'package:percepts/percepts.dart';
 
 import 'src/subsystems/flutterfire_firebase_auth_subsystem.dart';
 
-export 'src/percepts/cognition/observing_identity.dart';
-export 'src/percepts/cognition/sign_out.dart';
+export 'src/percepts/cognition/signing_out_of_firebase.dart';
 export 'src/widgets/avatar_menu_button/avatar_menu_button.dart';
 export 'src/widgets/avatar_menu_button/menu_option.dart';
 

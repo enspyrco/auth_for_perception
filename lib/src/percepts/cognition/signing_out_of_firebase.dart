@@ -3,8 +3,8 @@ import 'package:locator_for_perception/locator_for_perception.dart';
 import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:abstractions/beliefs.dart';
 
-class SignOut<T extends CoreBeliefs> extends Consideration<T> {
-  const SignOut();
+class SigningOutOfFirebase<T extends CoreBeliefs> extends Consideration<T> {
+  const SigningOutOfFirebase();
 
   @override
   Future<void> consider(BeliefSystem<T> beliefSystem) async {
