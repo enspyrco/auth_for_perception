@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 void main() {
-  print('awesome: isAwesome');
+  log('awesome: isAwesome');
 }
