@@ -4,13 +4,13 @@ version: 0.0.0-a1
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.2.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   
-  firebase_auth: ^4.10.1
+  firebase_auth: ^4.14.0
   
   percepts:
     git: https://github.com/enspyrco/percepts
