@@ -1,14 +1,14 @@
 library flutterfire_firebase_auth_service;
 
+import 'package:abstractions/identity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_service_interface/firebase_auth_service_interface.dart';
 import 'package:types_for_auth/types_for_auth.dart';
 
 import '../utils/user_extension.dart';
 
 /// A perception subsystem that implements the firebase_auth_service_interface
 /// by wrapping Flutterfire's firebase_auth plugin.
-class FlutterfireFirebaseAuthSubsystem implements FirebaseAuthService {
+class FlutterfireFirebaseAuthSubsystem implements IdentitySubsystem {
   FlutterfireFirebaseAuthSubsystem({FirebaseAuth? plugin})
       : _plugin = plugin ?? FirebaseAuth.instance;
 
@@ -38,7 +38,7 @@ class FlutterfireFirebaseAuthSubsystem implements FirebaseAuthService {
   }
 
   @override
-  Future<UserAuthState> signInWithApple(
+  Future<UserAuthState> signInWithAppleCredential(
       {required String idToken, required String rawNonce}) async {
     // Create an `OAuthCredential` from the credential returned by an auth provider.
     final oauthCredential = OAuthProvider('apple.com').credential(
@@ -52,6 +52,19 @@ class FlutterfireFirebaseAuthSubsystem implements FirebaseAuthService {
         await _plugin.signInWithCredential(oauthCredential);
 
     return credential.user.toBelief();
+  }
+
+  @override
+  Future<UserAuthState> signInToAppleThenFirebase({bool isWeb = false}) async {
+    final appleProvider = AppleAuthProvider();
+    final UserCredential userCredential = isWeb
+        ? await _plugin.signInWithPopup(appleProvider)
+        : await _plugin.signInWithProvider(appleProvider);
+
+    // we can now get an access token
+    // final String? accessToken = userCredential.credential?.accessToken;
+
+    return userCredential.user.toBelief();
   }
 
   @override
@@ -93,7 +106,9 @@ class FlutterfireFirebaseAuthSubsystem implements FirebaseAuthService {
   }
 
   @override
-  Future<void> signOut() async => _plugin.signOut();
+  Future<void> signOut() async {
+    _plugin.signOut();
+  }
 
   @override
   Future<UserAuthState> linkGoogleAccount(

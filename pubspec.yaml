@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   
   firebase_auth: ^4.14.0
+  auth_buttons: ^3.0.2
   
   percepts:
     git: https://github.com/enspyrco/percepts
