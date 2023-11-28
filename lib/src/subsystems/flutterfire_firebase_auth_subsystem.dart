@@ -54,6 +54,7 @@ class FlutterfireFirebaseAuthSubsystem implements IdentitySubsystem {
     return credential.user.toBelief();
   }
 
+  /// Code adapted from https://firebase.google.com/docs/auth/flutter/federated-auth#ios+
   @override
   Future<UserAuthState> signInToAppleThenFirebase({bool isWeb = false}) async {
     final appleProvider = AppleAuthProvider();
