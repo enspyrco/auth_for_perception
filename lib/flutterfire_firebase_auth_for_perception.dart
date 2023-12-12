@@ -12,6 +12,7 @@ import 'src/widgets/sign_in_screen_with_platform_default_button.dart';
 export 'src/widgets/avatar_menu_button/avatar_menu_button.dart';
 export 'src/widgets/avatar_menu_button/menu_option.dart';
 export 'src/widgets/sign_out_button.dart';
+export 'src/cognition/signing_out.dart';
 export 'src/widgets/sign_in_screen_with_platform_default_button.dart';
 export 'src/subsystems/flutterfire_firebase_auth_subsystem.dart';
 
